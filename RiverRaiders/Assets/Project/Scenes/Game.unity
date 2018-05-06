@@ -1754,9 +1754,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e7f247b2758bb478a2af3a5c5b87ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1171717939202882, guid: 89fb283bc5a142a4fa6b18039acf8819,
+    type: 2}
   horizontalSpeed: 3
   vertcalSpeed: 1
   horizontalLimit: 2.8
+  bulletSpeed: 5
 --- !u!212 &1030909765
 SpriteRenderer:
   m_ObjectHideFlags: 0
