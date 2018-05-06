@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -9,8 +10,12 @@ public class GameController : MonoBehaviour {
     public GameObject enemyPrefab;
     public float enemySpawnInterval = 1f;
     public float horizontalLimit = 2.8f;
+    public Text scoreText;
+    public Text fuelText;
 
     private float enemySpawnTimer;
+    private int score;
+    private float fuel = 100f;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +37,7 @@ public class GameController : MonoBehaviour {
                     Random.Range(-horizontalLimit, horizontalLimit),
                     player.transform.position.y + Screen.height / 100f
                 );
+                enemyInstance.GetComponent<Enemy>().OnKill += OnEnemyKilled;
             }
         }
 
@@ -44,4 +50,10 @@ public class GameController : MonoBehaviour {
             }
         }
 	}
+
+    void OnEnemyKilled()
+    {
+        score += 25;
+        scoreText.text = "Score: " + score;
+    }
 }

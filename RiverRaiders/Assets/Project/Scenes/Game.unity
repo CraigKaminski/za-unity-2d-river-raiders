@@ -2073,6 +2073,8 @@ MonoBehaviour:
     type: 2}
   enemySpawnInterval: 1
   horizontalLimit: 2.8
+  scoreText: {fileID: 1158520510}
+  fuelText: {fileID: 1245030450}
 --- !u!1 &1175467602
 GameObject:
   m_ObjectHideFlags: 0

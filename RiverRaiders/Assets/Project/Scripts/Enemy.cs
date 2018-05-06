@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+    public delegate void KillHandler();
+    public event KillHandler OnKill;
+
     public GameObject bulletPrefab;
     public float speed;
     public float bulletSpeed;
@@ -38,6 +41,11 @@ public class Enemy : MonoBehaviour {
         {
             Destroy(gameObject);
             Destroy(otherCollider.gameObject);
+
+            if (OnKill != null)
+            {
+                OnKill();
+            }
         }
     }
 }
