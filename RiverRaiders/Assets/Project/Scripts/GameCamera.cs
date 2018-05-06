@@ -14,10 +14,13 @@ public class GameCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        transform.position = new Vector3(
-            0,
-            target.transform.position.y + verticalOffset,
-            transform.position.z
-        );
+        if (target != null)
+        {
+            transform.position = new Vector3(
+                0,
+                target.transform.position.y + verticalOffset,
+                transform.position.z
+            );
+        }
 	}
 }

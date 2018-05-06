@@ -47,4 +47,13 @@ public class Player : MonoBehaviour {
             fired = false;
         }
 	}
+
+    private void OnTriggerEnter2D(Collider2D otherCollider)
+    {
+        if (otherCollider.tag == "EnemyBullet" || otherCollider.tag == "Enemy")
+        {
+            Destroy(gameObject);
+            Destroy(otherCollider.gameObject);
+        }
+    }
 }
