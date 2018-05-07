@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour {
     private float shootingTimer;
 
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
         shootingTimer = Random.Range(0f, shootingInterval);
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour {
     {
         if (otherCollider.tag == "PlayerBullet")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             Destroy(otherCollider.gameObject);
 
             if (OnKill != null)
