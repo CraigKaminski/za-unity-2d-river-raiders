@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public delegate void FuelHandler();
+    public event FuelHandler OnFuel;
+
     public GameObject bulletPrefab;
     public float horizontalSpeed = 3f;
     public float vertcalSpeed = 1f;
@@ -54,6 +57,13 @@ public class Player : MonoBehaviour {
         {
             Destroy(gameObject);
             Destroy(otherCollider.gameObject);
+        } else if (otherCollider.tag == "Fuel")
+        {
+            Destroy(otherCollider.gameObject);
+            if (OnFuel != null)
+            {
+                OnFuel();
+            }
         }
     }
 }

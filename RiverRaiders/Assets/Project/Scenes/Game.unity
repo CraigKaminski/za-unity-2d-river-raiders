@@ -1741,7 +1741,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
 --- !u!114 &1030909764
 MonoBehaviour:
@@ -2073,6 +2073,9 @@ MonoBehaviour:
     type: 2}
   enemySpawnInterval: 1
   horizontalLimit: 2.8
+  fuelPrefab: {fileID: 1611164396484546, guid: 0d29f8a2855006d4abc2cdc9d95fc8ce, type: 2}
+  fuelSpawnInterval: 9
+  fuelDecreaseSpeed: 5
   scoreText: {fileID: 1158520510}
   fuelText: {fileID: 1245030450}
 --- !u!1 &1175467602
